@@ -7,27 +7,27 @@ import 'package:provider/provider.dart';
 /**
  * Screen
  */
-abstract class Screen extends StatefulWidget {
-  const Screen({super.key});
+abstract class PlannerAppView extends StatefulWidget {
+  const PlannerAppView({super.key});
 
   @override
-  ScreenState createState();
+  PlannerAppViewState createState();
 }
 
-abstract class ScreenState<screen extends Screen, VM extends ViewModel<stateData>,
-    stateData extends StateData> extends State<screen> {
-  ScreenState();
+abstract class PlannerAppViewState<PlannerView extends PlannerAppView, VM extends ViewModel<stateData>,
+    stateData extends StateData> extends State<PlannerView> {
+  PlannerAppViewState();
 
   late VM viewModel;
 
-  Widget buildScreen(BuildContext context);
+  Widget buildWidget(BuildContext context);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
       ValueListenableProvider<stateData>.value(value: viewModel)
     ],
-    builder: (context, _) => buildScreen(context),
+    builder: (context, _) => buildWidget(context),
     );
   }
 

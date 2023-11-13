@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:org_app/GlobalProvider.dart';
-import 'package:org_app/TaskList.dart';
 import 'package:org_app/injection.config.dart';
 import 'package:org_app/injection.dart';
+import 'TaskListScreen.dart';
 import 'itemlist.dart';
 void main() {
   initializeGetIt();

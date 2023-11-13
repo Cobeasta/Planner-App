@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 /**
+ * @deprecated
  * Main widget for a list of tasks
  */
 class TaskList extends StatefulWidget {

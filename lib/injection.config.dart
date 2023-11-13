@@ -11,7 +11,9 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'TaskList.dart' as _i3;
+import 'taskList/TaskListViewModel.dart' as _i6;
+import 'taskList/TaskRepository.dart' as _i5;
+import 'taskList/TaskService.dart' as _i3;
 import 'ViewModelFactory.dart' as _i4;
 
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -27,9 +29,9 @@ _i1.GetIt initGetIt(
   );
   gh.factory<_i3.TaskService>(() => _i3.TaskService());
   gh.singleton<_i4.ViewModelFactory>(_i4.ViewModelFactoryImpl());
-  gh.factory<_i3.TaskRepository>(
-      () => _i3.TaskRepository(gh<_i3.TaskService>()));
-  gh.factory<_i3.TaskListViewModel>(
-      () => _i3.TaskListViewModel(gh<_i3.TaskRepository>()));
+  gh.factory<_i5.TaskRepository>(
+      () => _i5.TaskRepository(gh<_i3.TaskService>()));
+  gh.factory<_i6.TaskListViewModel>(
+      () => _i6.TaskListViewModel(gh<_i5.TaskRepository>()));
   return getIt;
 }
