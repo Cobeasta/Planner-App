@@ -6,7 +6,7 @@ import 'package:org_app/Screen.dart';
 import 'package:org_app/ViewModel.dart';
 import 'package:provider/provider.dart';
 import 'package:org_app/task_progress.dart';
-
+import 'package:org_app/model/Task.dart';
 import 'StateData.dart';
 
 // state with list of tasks.
@@ -101,39 +101,7 @@ class TaskData {
     return TaskData(to.id, to.description);
   }
 }*/
-// model
-class TaskData {
-  final String id;
-  final String description;
 
-  TaskData(this.id, this.description);
-
-  TaskData.FromTile(TaskTileData data)
-      : id = data.id,
-        description = data.description;
-}
-
-class TaskTileData {
-  final String id;
-  final String description;
-
-  TaskTileData(this.id, this.description);
-
-  static TaskTileData fromData(TaskData data) {
-    return TaskTileData(data.id, data.description);
-  }
-
-// StreamController<TaskData> taskChangeController = StreamController<
-//     TaskData>();
-// Stream<TaskData> get FromData(TaskData data) =>
-}
-
-class TaskChange {
-  final String id;
-  final bool isDone;
-
-  TaskChange(this.id, this.isDone);
-}
 
 
 abstract class ITaskRepository {
@@ -258,7 +226,9 @@ class _TaskListState
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: (
+            //TODO add action or widget for adding task
+            ) {
 
         },
       ),
